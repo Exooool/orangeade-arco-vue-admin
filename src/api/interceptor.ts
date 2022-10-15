@@ -4,6 +4,8 @@ import { Message, Modal } from '@arco-design/web-vue';
 import { useUserStore } from '@/store';
 import { getToken } from '@/utils/auth';
 
+// const SUCESS_CODE = [2000];
+
 export interface HttpResponse<T = unknown> {
   status: number;
   msg: string;
@@ -39,8 +41,8 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   (response: AxiosResponse<HttpResponse>) => {
     const res = response.data;
-    // if the custom code is not 20000, it is judged as an error.
-    if (res.code !== 2000) {
+    // 通过返回中状态码来判断是否请求成功
+    if (response.status !== 200) {
       Message.error({
         content: res.msg || 'Error',
         duration: 5 * 1000,

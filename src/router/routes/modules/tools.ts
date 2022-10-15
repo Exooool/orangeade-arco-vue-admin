@@ -13,16 +13,6 @@ const TOOLS: AppRouteRecordRaw = {
   },
   children: [
     {
-      path: 'excel',
-      name: 'excel',
-      component: () => import('@/views/tools/excel/index.vue'),
-      meta: {
-        locale: 'menu.tools.excel',
-        requiresAuth: true,
-        roles: ['*'],
-      },
-    },
-    {
       path: 'accountBook',
       name: 'accountBook',
       component: () => import('@/views/tools/accountBook/index.vue'),
