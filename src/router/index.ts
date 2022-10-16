@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css';
 
@@ -13,7 +13,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: 'login',
+      redirect: '/dashboard',
     },
     {
       path: '/login',
@@ -26,7 +26,7 @@ const router = createRouter({
     ...appRoutes,
     REDIRECT_MAIN,
     NOT_FOUND_ROUTE,
-  ],
+  ] as RouteRecordRaw[],
   scrollBehavior() {
     return { top: 0 };
   },

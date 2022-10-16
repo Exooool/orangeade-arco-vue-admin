@@ -4,6 +4,7 @@ import { AppRouteRecordRaw } from '../types';
 const DASHBOARD: AppRouteRecordRaw = {
   path: '/dashboard',
   name: 'dashboard',
+  redirect: '/dashboard/workplace',
   component: DEFAULT_LAYOUT,
   meta: {
     locale: 'menu.dashboard',

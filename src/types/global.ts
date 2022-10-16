@@ -36,6 +36,7 @@ export interface GeneralChart {
   data: Array<{ name: string; value: number[] }>;
 }
 
+// 天气
 export interface WeatherNow {
   cloud: string;
   dew: string;
@@ -52,4 +53,17 @@ export interface WeatherNow {
   windDir: string;
   windScale: string;
   windSpeed: string;
+}
+
+// 文章
+export interface Article {
+  article_id: number;
+  author: number;
+  title: string;
+  content: string;
+  commnet: string;
+  datetime: string;
+  catalog: string;
+  tag: string;
+  status: number;
 }

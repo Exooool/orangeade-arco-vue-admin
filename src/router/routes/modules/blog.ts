@@ -22,6 +22,17 @@ const BLOG: AppRouteRecordRaw = {
         roles: ['*'],
       },
     },
+    {
+      path: 'edit/:id',
+      name: 'edit',
+      component: () => import('@/views/blog/edit.vue'),
+      meta: {
+        locale: 'menu.blog.edit',
+        requiresAuth: true,
+        roles: ['*'],
+        hideInMenu: true,
+      },
+    },
   ],
 };
 
